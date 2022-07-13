@@ -22,16 +22,17 @@ void Painter::paintEvent(QPaintEvent *event)
     pintor.setPen(Qt::red);
 
     // Dibujar una linea
-    pintor.drawLine(100, 100, 200, 200);
+    pintor.drawLine(100, 100, 100, 100);
+    //pintor.drawLine(100, 150, 200, 200);
 
     // Cambiar el color del pincel
-    pintor.setPen(Qt::red);
+    pintor.setPen(Qt::black);
 
     // Establecer un tipo y tamaño de letra
-    pintor.setFont(QFont("Arial",30));
+    pintor.setFont(QFont("Times New Roman",30));
 
     // Dibujar un texto
-    pintor.drawText(250,150,"Picaso");
+    pintor.drawText(130,50,"Un Dibujo Simple y Sencillo");
 
     // Crear un nuevo pincel
     QPen pincel;
@@ -49,7 +50,7 @@ void Painter::paintEvent(QPaintEvent *event)
     // Dibujar un rectangulo
     // Las primeas 2 coordenadas se refieren a la posicion del objeto
     // Las otras 2 se refieren a las dimensiones del objeto
-    pintor.drawRect(200, 200, 300, 100);
+    pintor.drawRect(250, 350, 200, 50);
 
     // Crear un nuevo color
     //El orden de los colores RGB y el ultimo numero es la intensidad y transparencia
@@ -73,14 +74,7 @@ void Painter::paintEvent(QPaintEvent *event)
     //Llamamos al color para ocupar otro color
     pintor.setBrush(miColor);
 
-    // Dibuar una elipse
     pintor.setBrush(Qt::black);
-
-    QPen pincel3;
-    pincel3.setColor(Qt::red);
-    pincel3.setWidth(5);
-    pintor.setPen(pincel3);
-
 
     //QColor miColor1(250,100,100,100);
     //pintor.setBrush(miColor1);
@@ -89,6 +83,50 @@ void Painter::paintEvent(QPaintEvent *event)
 
     //Coordenadas desde donde empieza el arco
     //Tercer numero Ancho, cuarto altura
-    pintor.drawArc(400,400,100,1000,30*16,120*16);
+
+
+    //Dibujar un Arco
+
+    QPen pincel3;
+    pincel3.setColor(Qt::black);
+    pincel3.setWidth(10);
+    pintor.setPen(pincel3);
+    pintor.drawArc(400,450,100,1000,30*16,120*16);
+
+
+    //Dibujar un Arco (Figura 2)
+    QPen pincel4;
+    pincel4.setColor(Qt::black);
+    pincel4.setWidth(10);
+    pintor.setPen(pincel4);
+    pintor.drawArc(200,450,100,1000,30*16,120*16);
+
+    //Dibujar un Arco (Figura 3)
+    QPen pincel7;
+    pincel7.setColor(Qt::black);
+    pincel7.setWidth(10);
+    pintor.setPen(pincel7);
+    pintor.drawArc(90,75,100,800,40*16,120*16);
+
+    //Dibujar un Arco (Figura 4)
+    QPen pincel8;
+    pincel8.setColor(Qt::black);
+    pincel8.setWidth(10);
+    pintor.setPen(pincel8);
+    pintor.drawArc(500,75,-100,800,40*16,100*16);
+
+    //Dibujar un circulo
+    QPen pincel5;
+    pincel5.setColor(Qt::yellow);
+    pincel5.setWidth(15);
+    pintor.setPen(pincel5);
+    pintor.drawEllipse(190, 230, 100, 100);
+
+    //Dibujar un circulo (Figura 2)
+    QPen pincel6;
+    pincel6.setColor(Qt::yellow);
+    pincel6.setWidth(15);
+    pintor.setPen(pincel5);
+    pintor.drawEllipse(416, 230, 100, 100);
 }
 
