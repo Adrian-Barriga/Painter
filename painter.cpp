@@ -18,12 +18,11 @@ void Painter::paintEvent(QPaintEvent *event)
     // Crear el objeto painter. Establecer el formulario como su lienzo
     QPainter pintor(this);
 
-    // establecer un color a su pincel
+    // Establecer un color a su pincel
     pintor.setPen(Qt::red);
 
     // Dibujar una linea
     pintor.drawLine(100, 100, 100, 100);
-    //pintor.drawLine(100, 150, 200, 200);
 
     // Cambiar el color del pincel
     pintor.setPen(Qt::black);
@@ -48,45 +47,50 @@ void Painter::paintEvent(QPaintEvent *event)
     pintor.setBrush(Qt::black);
 
     // Dibujar un rectangulo
-    // Las primeas 2 coordenadas se refieren a la posicion del objeto
-    // Las otras 2 se refieren a las dimensiones del objeto
+    // Las primeas 2 coordenadas se refieren a la posicion (x,y) del objeto
+    // Las otras 2 se refieren a las dimensiones del objeto (ancho y altura)
     pintor.drawRect(250, 350, 200, 50);
 
     // Crear un nuevo color
-    //El orden de los colores RGB y el ultimo numero es la intensidad y transparencia
+    // El orden de los colores funciona en (RGB)
+    // El ultimo numero es la intensidad y transparencia.
     QColor miColor(5,221,129,50);
 
     // Crear un nuevo pincel
     QPen pincel2;
-    //Establecer color
+    // Establecer color
     pincel2.setColor(Qt::yellow);
-    //El grosor del pincel
+    // El grosor del pincel
     pincel2.setWidth(5);
-    //Se establece el estilo de la linea
-    //Podemos ver el estilo de la linea con F1
+    // Se establece el estilo de la linea
+    // Podemos ver el estilo de la linea con F1
     pincel2.setStyle(Qt::DashLine);
 
     // Establecer el nuevo pincel
     //Llamamos al nuevo pincel
+
     pintor.setPen(pincel2);
 
     // Cambiar la brocha
-    //Llamamos al color para ocupar otro color
-    pintor.setBrush(miColor);
+    // Llamamos al color --setBrush(miColor)-- para poder modificar el color
 
+    pintor.setBrush(miColor);
     pintor.setBrush(Qt::black);
 
-    //QColor miColor1(250,100,100,100);
-    //pintor.setBrush(miColor1);
 
-    //Podemos ver el tipo de figuras con F1
+    /* ¿Cómo dibujar un arco?
 
-    //Coordenadas desde donde empieza el arco
-    //Tercer numero Ancho, cuarto altura
+     * El arco es una figura que tiene 6 parametros.
+     * Los 2 primeros valores hacen referencia a la posicion del arco (X,Y) dentro del terminal visto desde la punta.
+     * El tercer valor nos señala el ancho del arco es decir la distancia entre los extremos del arco.
+     * El cuarto valor nos señala la altura del arco.
+     * El QUinto valor nos señala el  angulo de inicio.
+     * EL sexto valor nos señala el angulo de extension.
+     *
+     * Como añadido si queremos saber mas sobre la figura que vamos a seleccionar el --draw ...-- y luego aplastamos al tacla F1*/
 
 
     //Dibujar un Arco
-
     QPen pincel3;
     pincel3.setColor(Qt::black);
     pincel3.setWidth(10);
@@ -114,6 +118,13 @@ void Painter::paintEvent(QPaintEvent *event)
     pincel8.setWidth(10);
     pintor.setPen(pincel8);
     pintor.drawArc(500,75,-100,800,40*16,100*16);
+
+    //Dibujar un arco (Figura 5)
+    QPen pincel9;
+    pincel9.setColor(Qt::black);
+    pincel9.setWidth(10);
+    pintor.setPen(pincel9);
+    pintor.drawArc(170,190,250,100,30*16,120*16);
 
     //Dibujar un circulo
     QPen pincel5;
